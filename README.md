@@ -181,6 +181,12 @@ Content-Type: application/json
 ### Create Article
 **Endpoint:** `POST /api/articles`
 
+**Headers:**
+```
+Content-Type: multipart/form-data
+Accept: application/json
+```
+
 **Request (form-data):**
 - `title`: string 
 - `slug`: string 
@@ -209,6 +215,12 @@ Content-Type: application/json
 
 ### Update Article
 **Endpoint:** `PUT /api/articles/{id}`
+
+**Headers:**
+```
+Content-Type: multipart/form-data
+Accept: application/json
+```
 
 **Request (form-data):**
 - `title`: string 
@@ -242,6 +254,12 @@ Content-Type: application/json
 
 ### Delete Article
 **Endpoint:** `DELETE /api/articles/{id}`
+
+**Headers:**
+```
+Content-Type: multipart/form-data
+Accept: application/json
+```
 
 **Response:**
 ```json
