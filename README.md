@@ -84,6 +84,54 @@ Content-Type: application/json
 }
 ```
 
+###3. Login
+
+**Endpoint:**
+
+```
+POST /login
+```
+
+**Headers:**
+
+```
+Content-Type: application/json
+```
+
+**Body:**
+
+```json
+{
+    "email": "johndoe@example.com",
+    "password": "securepassword"
+}
+```
+
+**Response:**
+
+```json
+{
+    "token": "1|returnedbearertoken",
+    "user": {
+        "id": 1,
+        "name": "John Doe",
+        "email": "johndoe@gmail.com",
+        "email_verified_at": null,
+        "role": "user",
+        "created_at": "2025-03-28T09:44:09.000000Z",
+        "updated_at": "2025-03-28T09:44:09.000000Z"
+    }
+}
+```
+
+**Error Response:**
+
+```json
+{
+    "message": "Invalid credentials"
+}
+```
+
 ---
 
 ## Endpoints
