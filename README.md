@@ -134,18 +134,12 @@ Content-Type: application/json
 
 ---
 
-## Endpoints
+## Articles API
 
-### 1. Get All Posts
-
-**Endpoint:**
-
-```
-GET /posts
-```
+### Get All Articles
+**Endpoint:** `GET /api/articles`
 
 **Response:**
-
 ```json
 [
     {
@@ -164,18 +158,10 @@ GET /posts
 ]
 ```
 
----
-
-### 2. Get a Single Post
-
-**Endpoint:**
-
-```
-GET /posts/{id}
-```
+### Get Article by ID
+**Endpoint:** `GET /api/articles/{id}`
 
 **Response:**
-
 ```json
 {
     "id": 1,
@@ -192,54 +178,76 @@ GET /posts/{id}
 }
 ```
 
----
+### Create Article
+**Endpoint:** `POST /api/articles`
 
-### 3. Create a New Post
-
-**Endpoint:**
-
-```
-POST /posts
-```
-
-**Headers:**
-
-```
-Content-Type: multipart/form-data
-```
-
-**Body (form-data):**
-
-```
-title: (string)
-slug: (string)
-description: (string)
-location: (string)
-tags[]: (string, multiple values allowed)
-content: (string)
-thumbnail: (file)
-```
+**Request (form-data):**
+- `title`: string (required)
+- `slug`: string (optional)
+- `thumbnail`: file (optional)
+- `description`: string (required)
+- `location`: string (required)
+- `tags[]`: array (optional)
+- `content`: string (optional)
 
 **Response:**
-
 ```json
 {
-    "message": "Post created successfully",
-    "post": {
+    "id": 3,
+    "title": "New Article",
+    "user_id": 1,
+    "slug": "new-article",
+    "thumbnail": "thumbnails/example.jpg",
+    "description": "New article description.",
+    "location": "New Location",
+    "tags": ["tagA", "tagB"],
+    "content": "This is new article content.",
+    "created_at": "2025-03-28T10:00:00.000000Z",
+    "updated_at": "2025-03-28T10:00:00.000000Z"
+}
+```
+
+### Update Article
+**Endpoint:** `PUT /api/articles/{id}`
+
+**Request (form-data):**
+- `title`: string (optional)
+- `user_id`: integer (optional)
+- `slug`: string (optional)
+- `thumbnail`: file (optional)
+- `description`: string (optional)
+- `location`: string (optional)
+- `tags[]`: array (optional)
+- `content`: string (optional)
+
+**Response:**
+```json
+{
+    "message": "Article updated successfully",
+    "article": {
         "id": 1,
-        "title": "Sample Article",
-        "slug": "sample-article-title",
+        "title": "Updated Article",
         "user_id": 1,
-        "thumbnail": "thumbnails/filename.jpg",
-        "description": "This is a sample description for the article.",
-        "location": "Sample Location",
-        "tags": ["tag1", "tag2", "tag3"],
-        "content": "This is the content of the sample article.",
+        "slug": "updated-article",
+        "thumbnail": "thumbnails/updated.jpg",
+        "description": "Updated article description.",
+        "location": "Updated Location",
+        "tags": ["tagX", "tagY"],
+        "content": "This is updated article content.",
         "created_at": "2025-03-28T09:46:06.000000Z",
-        "updated_at": "2025-03-28T09:46:06.000000Z"
+        "updated_at": "2025-03-28T11:00:00.000000Z"
     }
 }
 ```
 
----
+### Delete Article
+**Endpoint:** `DELETE /api/articles/{id}`
 
+**Response:**
+```json
+{
+    "message": "Article deleted successfully"
+}
+```
+
+---
