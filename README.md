@@ -257,7 +257,6 @@ Accept: application/json
 
 **Headers:**
 ```
-Content-Type: multipart/form-data
 Accept: application/json
 ```
 
