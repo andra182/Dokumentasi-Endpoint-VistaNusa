@@ -213,7 +213,6 @@ Content-Type: multipart/form-data
 ```
 title: (string)
 slug: (string)
-user_id: (integer)
 description: (string)
 location: (string)
 tags[]: (string, multiple values allowed)
