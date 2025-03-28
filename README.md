@@ -182,13 +182,13 @@ Content-Type: application/json
 **Endpoint:** `POST /api/articles`
 
 **Request (form-data):**
-- `title`: string (required)
-- `slug`: string (optional)
-- `thumbnail`: file (optional)
-- `description`: string (required)
-- `location`: string (required)
-- `tags[]`: array (optional)
-- `content`: string (optional)
+- `title`: string 
+- `slug`: string 
+- `thumbnail`: file 
+- `description`: string 
+- `location`: string 
+- `tags[]`: array 
+- `content`: string 
 
 **Response:**
 ```json
@@ -211,14 +211,14 @@ Content-Type: application/json
 **Endpoint:** `PUT /api/articles/{id}`
 
 **Request (form-data):**
-- `title`: string (optional)
-- `user_id`: integer (optional)
-- `slug`: string (optional)
-- `thumbnail`: file (optional)
-- `description`: string (optional)
-- `location`: string (optional)
-- `tags[]`: array (optional)
-- `content`: string (optional)
+- `title`: string 
+- `user_id`: integer 
+- `slug`: string 
+- `thumbnail`: file 
+- `description`: string 
+- `location`: string 
+- `tags[]`: array 
+- `content`: string 
 
 **Response:**
 ```json
