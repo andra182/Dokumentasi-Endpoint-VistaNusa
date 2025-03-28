@@ -224,7 +224,6 @@ Accept: application/json
 
 **Request (form-data):**
 - `title`: string 
-- `user_id`: integer 
 - `slug`: string 
 - `thumbnail`: file 
 - `description`: string 
